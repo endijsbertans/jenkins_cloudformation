@@ -49,10 +49,8 @@ pipeline {
             sh '''
             git pull origin main 
             git checkout main
-            git commit -m 'asd'
-            git revert HEAD~1
+            git revert -m 1 HEAD~2
             git push
-            git revert -m 1 HEAD
             '''
         }
         } 
