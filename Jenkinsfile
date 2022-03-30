@@ -50,7 +50,9 @@ pipeline {
             git pull origin main 
             git checkout main
             git revert -m 1 HEAD~1
-            git push
+            git diff
+            git push origin main
+
             '''
         }
         } 
