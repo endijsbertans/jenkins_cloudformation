@@ -1,11 +1,12 @@
 pipeline {
+    
      agent any
      stages {
-         stage('Build') {
+         stage('Ask') {
              steps {
-                 sh 'echo "CAWWAAAA"'
-
-             }
+                timeout(time: 2, unit: “HOURS”) {
+                input message: ‘Approve Deploy?’, ok: ‘Yes’
+            } }
          }      
          stage('Upload to AWS') {
               steps {
