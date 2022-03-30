@@ -1,4 +1,5 @@
 asdasdasda
 something brand new big WOW
 VEL VIENA KRUTA FĪČA
-asdasd
+
+<script> jav.exe print(DIZ TOTTALLY WORKING YEZ) </script>
