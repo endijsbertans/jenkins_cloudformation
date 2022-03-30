@@ -12,8 +12,8 @@ pipeline {
                                              name: 'Hash of last merge: ')]
 
         }
-            }
-                steps {
+            
+               
                      input('Do you want to proceed?')
                              
     }
