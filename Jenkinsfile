@@ -35,9 +35,7 @@ pipeline {
         success {
             echo 'I succeeded!'
         }
-        unstable {
-            echo 'I am unstable :/'
-        }
+
         failure {
             echo 'I failed :('
         }
@@ -49,7 +47,7 @@ pipeline {
             sh '''
             git pull origin main 
             git checkout main
-            git revert -m 1 HEAD~1
+            git revert HEAD~1
             git diff
             git push origin main
 
