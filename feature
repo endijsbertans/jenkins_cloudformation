@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
@@ -31,3 +32,5 @@ SO DIZ IZ IT HUH?git lg2
 asdasdasdasdasdasddasdasd
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgit add .
 >>>>>>> parent of ec9bd0e (asd)
+=======
+>>>>>>> parent of f838458 (asd)
