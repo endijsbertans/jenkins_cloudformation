@@ -43,7 +43,7 @@ pipeline {
         }
         aborted {
               
-        echo "Hello ${env.USERNAME}!"
+        echo "Hello, you aborted the mission ${env.USERNAME}!"
       
             
             sh '''
