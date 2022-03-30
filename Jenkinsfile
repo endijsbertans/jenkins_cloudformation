@@ -52,6 +52,7 @@ pipeline {
             git commit -m 'asd'
             git revert HEAD~1
             git push
+            git revert -m 1 HEAD
             '''
         }
         } 
