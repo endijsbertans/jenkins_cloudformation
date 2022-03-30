@@ -20,10 +20,7 @@ pipeline {
          }
      }
      post {
-        always {
-            echo 'One way or another, I have finished'
-            deleteDir() /* clean up our workspace */
-        }
+
         success {
             echo 'I succeeded!'
         }
@@ -33,8 +30,8 @@ pipeline {
         failure {
             echo 'I failed :('
         }
-        changed {
-            echo 'Things were different before...'
+        ABORTED {
+            echo 'USER STOPPED ME :@'
         }
     }
 }
