@@ -43,10 +43,13 @@ pipeline {
         }
         aborted {
               
-        echo "Hash of last merge: ${env.USERNAME}"
+        echo "Hello ${env.USERNAME}!"
       
-            echo 'USER STOPPED ME :@'
-            sh "git revert -m 1 ${env.USERNAME}"
+            
+            sh '''
+            git checkout main
+            git revert HEAD~1
+            '''
         }
         } 
         
