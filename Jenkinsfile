@@ -8,7 +8,7 @@ pipeline {
                      input('Do you want to proceed?')
                              
     }
-        
+        }
               
          stage('Upload to AWS') {
               steps {
@@ -20,6 +20,7 @@ pipeline {
          }
      
      }
+     
      post {
 
         success {
@@ -48,5 +49,5 @@ pipeline {
         }
     
 }
-}
+
 
