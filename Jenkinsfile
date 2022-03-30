@@ -45,7 +45,7 @@ pipeline {
       
             echo 'USER STOPPED ME :@'
             sh "git revert -m 1 ${env.USERNAME}"
-
+        }
         } 
         
     
