@@ -47,6 +47,7 @@ pipeline {
       
             
             sh '''
+            git pull origin main 
             git checkout main
             git revert HEAD~1
             '''
