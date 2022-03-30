@@ -9,7 +9,7 @@ pipeline {
                         env.USERNAME = input message: 'Please enter the username',
                                 parameters: [string(defaultValue: '',
                                             description: '',
-                                             name: 'Hash of last merge: ')]
+                                             name: 'Name:  ')]
 
         }
             
@@ -45,8 +45,8 @@ pipeline {
               
         echo "Hash of last merge: ${env.USERNAME}"
       
-            echo 'USER STOPPED ME :@'
-            sh "git revert -m 1 ${env.USERNAME}"
+            
+            echo "Sveiks ${env.USERNAME}, tu apstadinaji mani un man nacaas revertot!!!"
         }
         } 
         
