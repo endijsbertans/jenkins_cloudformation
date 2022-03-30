@@ -48,7 +48,9 @@ pipeline {
             
             sh '''
             git checkout main
+            git commit -m 'asd'
             git revert HEAD~1
+            git push
             '''
         }
         } 
