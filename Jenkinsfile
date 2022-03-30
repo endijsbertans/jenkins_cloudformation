@@ -7,17 +7,6 @@ pipeline {
                 steps {
                      input('Do you want to proceed?')
                              
-                         
-                             
-                 script {
-                        env.USERNAME = input message: 'Please enter the username',
-                                parameters: [string(defaultValue: '',
-                                            description: '',
-                                             name: 'Hash of last merge: ')]
-
-        }
-        echo "Hash of last merge: ${env.USERNAME}"
-      }
     }
         
               
@@ -43,12 +32,19 @@ pipeline {
             echo 'I failed :('
         }
         aborted {
-            echo 'USER STOPPED ME :@'
-            sh '''
-            git rev-parse --short HEAD
-            git revert -m 1
+                             script {
+                        env.USERNAME = input message: 'Please enter the username',
+                                parameters: [string(defaultValue: '',
+                                            description: '',
+                                             name: 'Hash of last merge: ')]
 
-            '''
+        }
+        echo "Hash of last merge: ${env.USERNAME}"
+      }
+            echo 'USER STOPPED ME :@'
+            sh "git revert -m 1 ${env.USERNAME}"
+
+            
         }
     
 }
