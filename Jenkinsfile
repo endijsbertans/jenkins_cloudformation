@@ -4,6 +4,7 @@ pipeline {
      stages {
              
         stage('Input') {
+            steps{
               script {
                         env.USERNAME = input message: 'Please enter the username',
                                 parameters: [string(defaultValue: '',
@@ -11,6 +12,7 @@ pipeline {
                                              name: 'Hash of last merge: ')]
 
         }
+            }
                 steps {
                      input('Do you want to proceed?')
                              
