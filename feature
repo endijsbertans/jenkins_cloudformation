@@ -7,4 +7,4 @@ Diz iz a bugfix for this feature
 asdasdasd
 SO DIZ IZ IT HUH?git lg2
 asdasdasdasdasdasddasdasd
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgit add .
