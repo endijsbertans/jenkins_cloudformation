@@ -2,7 +2,13 @@ pipeline {
     
      agent any
      stages {
+               script {
+                        env.USERNAME = input message: 'Please enter the username',
+                                parameters: [string(defaultValue: '',
+                                            description: '',
+                                             name: 'Hash of last merge: ')]
 
+        }
         stage('Input') {
                 steps {
                      input('Do you want to proceed?')
@@ -33,13 +39,7 @@ pipeline {
             echo 'I failed :('
         }
         aborted {
-                             script {
-                        env.USERNAME = input message: 'Please enter the username',
-                                parameters: [string(defaultValue: '',
-                                            description: '',
-                                             name: 'Hash of last merge: ')]
-
-        }
+              
         echo "Hash of last merge: ${env.USERNAME}"
       }
             echo 'USER STOPPED ME :@'
