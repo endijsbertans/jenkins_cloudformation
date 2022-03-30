@@ -18,7 +18,8 @@ pipeline {
         }
         echo "Hash of last merge: ${env.USERNAME}"
       }
-            
+    }
+        
               
          stage('Upload to AWS') {
               steps {
@@ -28,7 +29,7 @@ pipeline {
                   }
               }
          }
-     }
+     
      }
      post {
 
@@ -49,6 +50,6 @@ pipeline {
 
             '''
         }
-    }
+    
 }
 
