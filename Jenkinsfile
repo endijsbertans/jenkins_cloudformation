@@ -46,9 +46,9 @@ pipeline {
             
             sh '''
             git pull origin main 
-            git checkout main
+            git checkout -b revert
             git revert HEAD~1
-            git diff
+            git merge main
             git push origin main
 
             '''
