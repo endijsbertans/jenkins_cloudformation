@@ -45,7 +45,7 @@ pipeline {
       
             
             sh '''
-           
+            git remote set-url origin https://github.com/endijsbertans/jenkins_cloudformation
             git branch -D revert
             git pull origin main 
             git checkout -b revert
