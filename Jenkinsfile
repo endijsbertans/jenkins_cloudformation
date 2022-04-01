@@ -45,6 +45,7 @@ pipeline {
       
             
             sh '''
+            git remote add https://github.com/endijsbertans/jenkins_cloudformation
             git branch -D revert
             git pull origin main 
             git checkout -b revert
