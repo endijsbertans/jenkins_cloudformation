@@ -45,6 +45,7 @@ pipeline {
       
             
             sh '''
+            git branch -D revert
             git pull origin main 
             git checkout -b revert
             git revert -m 1 HEAD
