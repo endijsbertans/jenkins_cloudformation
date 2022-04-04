@@ -49,10 +49,9 @@ pipeline {
             git pull origin main 
             git checkout -b revert
             git revert -m 1 HEAD
-            git add .
-            git commit -m 'message'
-            git merge main
             git checkout main
+            git merge main
+            
  
             git push origin main
             git branch -D revert
