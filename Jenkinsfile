@@ -45,7 +45,6 @@ pipeline {
       
             
             sh '''
-            git commit --amend --reset-author
             git checkout main
             git pull origin main 
             git checkout -b revert
