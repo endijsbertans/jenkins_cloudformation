@@ -36,9 +36,7 @@ pipeline {
             echo 'I succeeded!'
         }
 
-        failure {
-            echo 'I failed :('
-        }
+
         aborted {
         withCredentials([gitUsernamePassword(credentialsId: '123', gitToolName: 'Default')]) {      
         echo "Hello, you aborted the mission ${env.USERNAME}!"
