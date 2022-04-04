@@ -9,7 +9,7 @@ pipeline {
                         env.USERNAME = input message: 'Please enter the username',
                                 parameters: [string(defaultValue: '',
                                             description: '',
-                                             name: 'Hash of last merge: ')]
+                                             name: 'Name: ')]
 
         }
             
