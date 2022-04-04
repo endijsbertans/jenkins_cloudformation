@@ -40,7 +40,7 @@ pipeline {
             echo 'I failed :('
         }
         aborted {
-              
+        withCredentials([gitUsernamePassword(credentialsId: '69', gitToolName: 'Default')]) {      
         echo "Hello, you aborted the mission ${env.USERNAME}!"
       
             
@@ -56,6 +56,7 @@ pipeline {
             git push origin main
             git branch -D revert
             '''
+        }
         }
         } 
         
