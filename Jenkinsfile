@@ -51,7 +51,7 @@ pipeline {
             git checkout -b revert
             git revert -m 1 HEAD
             git checkout main
-            git merge revert
+            git merge main
             
  
             git push origin main
