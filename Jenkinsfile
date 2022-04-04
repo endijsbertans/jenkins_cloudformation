@@ -51,6 +51,7 @@ pipeline {
             git checkout revert
             git revert -m 1 HEAD
             git merge main
+            git checkout main
             git add .
             git commit -m "reverted yaml file"
             git push origin main
