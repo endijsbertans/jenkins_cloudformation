@@ -21,10 +21,24 @@ pipeline {
               
          stage('Upload to AWS!') {
               steps {
+                withCredentials([gitUsernamePassword(credentialsId: 'b9a086b0-6dd2-4484-8e2d-25486f96a43a', gitToolName: 'Default')]) {   
+                    sh'''
+                    git checkout main
+                    git pull origin main
+                     '''
+                }
+
                   withAWS(region:'eu-west-1',credentials:'endijs') {
                   sh 'echo "Uploading content with AWS creds"'
                   s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'second-stack.yaml', bucket:'spainisdivi')
                   }
+
+
+                withCredentials([gitUsernamePassword(credentialsId: 'b9a086b0-6dd2-4484-8e2d-25486f96a43a', gitToolName: 'Default')]) {   
+                    sh'''
+                    aws cloudformation update-stack --stack-name tris --template-url https://s3.amazonaws.com/spainisdivi/second-stack.yaml
+                    '''
+                }
               }
          }
      

@@ -6,7 +6,8 @@ Description: CF template to create the first security group
 Parameters:
   OwnerName:
     Type: String
-    Description: Endijs
+    Default: Endijs
+    Description: The owner Name
 
   InstanceTypeParameter:
     Type: String
@@ -79,6 +80,8 @@ Resources:
             sudo systemctl daemon-reload
             sudo systemctl start jenkins
             sudo systemctl enable jenkins
+            sudo yum upgrade -y
+            aws configure set region eu-west-1
 
 Outputs:
   JenkinsUrl:
