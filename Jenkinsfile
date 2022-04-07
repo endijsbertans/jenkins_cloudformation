@@ -52,7 +52,7 @@ pipeline {
 
 
         aborted {
-        withCredentials([gitUsernamePassword(credentialsId: '123', gitToolName: 'Default')]) {      
+        withCredentials([gitUsernamePassword(credentialsId: 'c91a80d0-4861-4985-b442-79e7779dd242', gitToolName: 'Default')]) {      
         echo "Hello, you aborted the mission ${env.USERNAME}!"
       
             
