@@ -31,14 +31,14 @@ pipeline {
          }
         stage('send second stack to s3'){
                steps{
-                  withAWS(region:'eu-west-1',credentials:'b9a086b0-6dd2-4484-8e2d-25486f96a43a') {
+                  withAWS(region:'eu-west-1',credentials:'aws-creds') {
                   sh 'echo "Uploading content with AWS creds"'
                   s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'second-stack.yaml', bucket:'spainisdivi')
 
                     }}}
                     stage('cloudformation update'){
                steps{
-                  withAWS(region:'eu-west-1',credentials:'b9a086b0-6dd2-4484-8e2d-25486f96a43a') {
+                  withAWS(region:'eu-west-1',credentials:'aws-creds') {
                    sh'''
                     aws cloudformation update-stack --stack-name tris --template-url https://spainisdivi.s3.eu-west-1.amazonaws.com/second-stack.yaml
                     '''
@@ -53,7 +53,7 @@ pipeline {
 
 
         aborted {
-        withCredentials([gitUsernamePassword(credentialsId: 'c91a80d0-4861-4985-b442-79e7779dd242', gitToolName: 'Default')]) {      
+        withCredentials([gitUsernamePassword(credentialsId: 'github-creds', gitToolName: 'Default')]) {      
         echo "Hello, you aborted the mission ${env.USERNAME}!"
       
             
