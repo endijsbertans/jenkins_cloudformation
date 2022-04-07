@@ -72,11 +72,10 @@ Resources:
         Fn::Base64:
           !Sub |
             #!/bin/bash -xe
-            sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
-            sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+
             sudo yum upgrade -y
             sudo amazon-linux-extras install epel java-openjdk11 -y
-            sudo yum install -y jenkins
+            sudo yum install -y jenkins-2.339
             sudo systemctl daemon-reload
             sudo systemctl start jenkins
             sudo systemctl enable jenkins
