@@ -21,12 +21,12 @@ pipeline {
               
          stage('Update git repo') {
               steps {
-                withCredentials([gitUsernamePassword(credentialsId: 'c91a80d0-4861-4985-b442-79e7779dd242', gitToolName: 'Default')]) {   
+                
                     sh'''
                     git checkout main
                     git pull origin main
                      '''
-                }
+                
             }
          }
         stage('send second stack to s3'){
