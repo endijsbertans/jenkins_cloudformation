@@ -36,11 +36,11 @@ pipeline {
                   s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'second-stack.yaml', bucket:'spainisdivi')
 
                     }}}
-                    stage('send second stack to s3'){
+                    stage('cloudformation update'){
                steps{
                   withAWS(region:'eu-west-1',credentials:'b9a086b0-6dd2-4484-8e2d-25486f96a43a') {
                    sh'''
-                    aws cloudformation update-stack --stack-name tris --template-url https://s3.amazonaws.com/spainisdivi/second-stack.yaml
+                    aws cloudformation update-stack --stack-name tris --template-url https://spainisdivi.s3.eu-west-1.amazonaws.com/second-stack.yaml
                     '''
                     }}}
      }
