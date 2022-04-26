@@ -72,7 +72,8 @@ Resources:
         Fn::Base64:
           !Sub |
             #!/bin/bash -xe
-
+            sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
+            sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
             sudo yum upgrade -y
             sudo amazon-linux-extras install epel java-openjdk11 -y
             sudo yum install -y jenkins-2.339
@@ -81,6 +82,7 @@ Resources:
             sudo systemctl enable jenkins
             sudo yum upgrade -y
             aws configure set region eu-west-1
+            sudo yum install git -y
 
 Outputs:
   JenkinsUrl:
