@@ -42,9 +42,9 @@ pipeline {
                     withAWS(region:'eu-west-1',credentials:'aws-creds') {                     
                      cfnUpdate(stack: 'tris', url: 'https://spainisdivi.s3.eu-west-1.amazonaws.com/second-stack.yaml')
                  }
-             }
+                 }
+                 }
      }
-     
      post {
 
         success {
