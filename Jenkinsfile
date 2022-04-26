@@ -37,15 +37,12 @@ pipeline {
                     }
                     }
 
-        stage('cloudformation update'){
-               steps{
-                  withAWS(region:'eu-west-1',credentials:'aws-creds') {
-                   sh'''
-                    aws cloudformation update-stack --stack-name tris --template-url https://spainisdivi.s3.eu-west-1.amazonaws.com/second-stack.yaml
-                    '''
-                    }
-                    }
-                    }
+         stage('cloudformation update'){
+                steps{
+                    withAWS(region:'eu-west-1',credentials:'aws-creds') {                     
+                     cfnUpdate(stack: 'tris', url: 'https://spainisdivi.s3.eu-west-1.amazonaws.com/second-stack.yaml')
+                 }
+             }
      }
      
      post {
@@ -61,7 +58,7 @@ pipeline {
       
             
             sh '''
-            git branch -D revert
+            
             git checkout main
             git pull origin main 
             git checkout -b revert
@@ -71,7 +68,7 @@ pipeline {
             
  
             git push origin main
-            
+            git branch -D revert
             '''
         }
         }
