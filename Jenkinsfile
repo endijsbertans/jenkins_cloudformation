@@ -60,7 +60,7 @@ pipeline {
             sh '''
             git config --global user.email "endijsbertans@gmail.com"
             git config --global user.name "endijsbertans"
-            
+            git branch -D revert
             git checkout main
             git pull origin main 
             git checkout -b revert
@@ -70,7 +70,7 @@ pipeline {
             
  
             git push origin main
-            git branch -D revert
+            
             '''
         }
         }
