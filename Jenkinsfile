@@ -58,7 +58,7 @@ pipeline {
       
             
             sh '''
-             
+            git branch -D revert
             git checkout main
             git pull origin main 
             git checkout -b revert
@@ -68,7 +68,7 @@ pipeline {
             
  
             git push origin main
-            git branch -D revert
+            
             '''
         }
         }
